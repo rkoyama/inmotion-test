@@ -1,0 +1,8 @@
+{
+  "/api/": {
+    "target": "http://wordpress.org",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
