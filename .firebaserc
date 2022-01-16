@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "inmotion-test-10247": {
+      "hosting": {
+        "inmotion-test": [
+          "inmotion-test-10247"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "inmotion-test-10247"
+  }
+}

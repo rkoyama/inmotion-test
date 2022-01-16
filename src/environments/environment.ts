@@ -2,8 +2,19 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+/*
+  Firebase Integration
+  Url: https://inmotion-test-10247.web.app/
+ */
+
 export const environment = {
-  production: false
+  production: false,
+  apiKey: "AIzaSyBsAZ85lEjMIEBz3QtwpF0xdtQtK6lfUSM",
+  authDomain: "inmotion-test-10247.firebaseapp.com",
+  projectId: "inmotion-test-10247",
+  storageBucket: "inmotion-test-10247.appspot.com",
+  messagingSenderId: "626356418414",
+  appId: "1:626356418414:web:dff8a1ffedfe745be0b37f"
 };
 
 /*
