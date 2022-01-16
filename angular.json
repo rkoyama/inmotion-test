@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "inmotion-test:build:production",
+            "firebaseProject": "inmotion-test-10247",
+            "firebaseHostingSite": "inmotion-test-10247"
+          }
         }
       }
     }

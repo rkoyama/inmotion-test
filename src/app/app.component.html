@@ -2,3 +2,6 @@
   <mat-icon>local_fire_department</mat-icon>
   <span>inMotion Test App</span>
 </mat-toolbar>
+<ul *ngFor="let article in articles; index as i; latest as isLatest">
+  <li>{{ article.title }}</li>
+</ul>
