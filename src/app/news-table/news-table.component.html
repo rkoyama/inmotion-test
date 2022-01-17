@@ -1,1 +1,11 @@
-<p>news-table works!</p>
+<h3>Latest Wordpress Articles</h3>
+
+<!--The columns of the table should be id, slug, status, title, and creation date-->
+<button (click)="getArticles()">Refresh</button>
+<div class="news-table" *ngFor="let article of articles">
+  <span>{{ article.id | json }}</span>
+  <span>{{ article.slug | json }}</span>
+  <span>{{ article.status | json }}</span>
+  <span>{{ article.title | json }}</span>
+  <span>{{ article.date | json }}</span>
+</div>
