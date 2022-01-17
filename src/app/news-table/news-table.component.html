@@ -1,11 +1,30 @@
 <h3>Latest Wordpress Articles</h3>
 
-<!--The columns of the table should be id, slug, status, title, and creation date-->
 <button (click)="getArticles()">Refresh</button>
-<div class="news-table" *ngFor="let article of articles">
-  <span>{{ article.id | json }}</span>
-  <span>{{ article.slug | json }}</span>
-  <span>{{ article.status | json }}</span>
-  <span>{{ article.title | json }}</span>
-  <span>{{ article.date | json }}</span>
-</div>
+
+<div *ngIf="!articles">Loading...</div>
+
+<table *ngIf="articles" mat-table [dataSource]="articles" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="slug">
+    <th mat-header-cell *matHeaderCellDef> Slug </th>
+    <td mat-cell *matCellDef="let element"> {{element.slug}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="newsColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: newsColumns;"></tr>
+</table>

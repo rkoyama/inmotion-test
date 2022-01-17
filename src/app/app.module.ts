@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from "@angular/material/table";
+
+import { AppComponent } from './app.component';
 import { NewsTableComponent } from './news-table/news-table.component';
 
 @NgModule({
@@ -23,6 +24,10 @@ import { NewsTableComponent } from './news-table/news-table.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
