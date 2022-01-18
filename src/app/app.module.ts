@@ -11,11 +11,16 @@ import { MatTableModule } from "@angular/material/table";
 
 import { AppComponent } from './app.component';
 import { NewsTableComponent } from './news-table/news-table.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsTableComponent
+    NewsTableComponent,
+    ContactUsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +33,7 @@ import { NewsTableComponent } from './news-table/news-table.component';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
