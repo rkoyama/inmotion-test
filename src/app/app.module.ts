@@ -8,14 +8,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppComponent } from './app.component';
 import { NewsTableComponent } from './news-table/news-table.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsTableComponent
+    NewsTableComponent,
+    ContactUsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,7 @@ import { NewsTableComponent } from './news-table/news-table.component';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
