@@ -1,6 +1,5 @@
-<mat-toolbar color="primary">
-  <a [routerLink]="['/']" routerLinkActive="active"><span>inMotion Test App</span></a>
-</mat-toolbar>
-<a routerLink="contact-us" routerLinkActive="active" class="button fancy-button">
-  <i class="material-icons">shopping_cart</i>Contact Us
-</a>
+<h1>inMotion Test App</h1>
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link [routerLink]="['/']" routerLinkActive="active" title="Latest Wordpress Articles">Latest Wordpress Articles</a>
+  <a mat-tab-link [routerLink]="['contact-us']" routerLinkActive="active" title="Contact Us">Contact Us</a>
+</nav>

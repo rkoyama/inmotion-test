@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'inmotion-test';
 
+  currentYear = new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit(){ }

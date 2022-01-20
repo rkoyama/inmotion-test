@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { NewsTableComponent } from './news-table/news-table.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

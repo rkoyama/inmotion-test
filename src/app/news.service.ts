@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { catchError, throwError } from "rxjs";
 
 export interface newsArticles {
   id: string;
@@ -16,11 +15,19 @@ export interface newsArticles {
 })
 
 export class NewsService {
-  // TODO: Add error validation
+
   constructor(private http: HttpClient) { }
 
   getNews(){
-    const url ='https://wordpress.org/news/wp-json/wp/v2/posts?_fields=id,slug,status,title,date&per_page=20';
-    return this.http.get<newsArticles[]>(url, {responseType: 'json'});
+    const url ="https://wordpress.org/news/wp-json/wp/v2/posts";
+    let params = new HttpParams().append("_fields","id,slug,status,title,date")
+                                 .append("per_page",20);
+    return this.http.get<newsArticles[]>(url, {params: params})
+      .pipe(
+        catchError((error => {
+          console.log('Error: ' + error);
+          return throwError(() => new Error(error));
+        })
+      ))
   }
 }
