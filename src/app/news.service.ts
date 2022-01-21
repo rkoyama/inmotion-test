@@ -20,7 +20,7 @@ export interface newsDetails {
 const URL = "https://wordpress.org/news/wp-json/wp/v2/posts";
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'root'
 })
 
 export class NewsService {
