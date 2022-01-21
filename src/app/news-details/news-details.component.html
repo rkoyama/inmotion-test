@@ -1,0 +1,14 @@
+<mat-card>
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+  <div *ngIf="!isLoading" class="article-details">
+    <mat-card-title>{{ newsDetail[0]['title']['rendered'] }}</mat-card-title>
+    <mat-card-subtitle>{{ newsDetail[0]['date'] | date:'full' }}</mat-card-subtitle>
+    <mat-card-content>
+      <p [innerHTML]="newsDetail[0]['content']['rendered']"></p>
+    </mat-card-content>
+    <p><a href="{{ newsDetail['0']['link'] }}" target="_blank">Link to original post</a></p>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/']">Return to Results</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

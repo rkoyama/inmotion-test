@@ -23,10 +23,9 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     loader.load().then(() => {
       this.map = new google.maps.Map(this.mapElement.nativeElement, {
-        center: { lat: -34.397, lng: 150.644 },
+        center: { lat: 36.560046, lng: -105.102654 },
         zoom: 8
       });
     });
   }
-
 }

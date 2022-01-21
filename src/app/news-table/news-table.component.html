@@ -1,10 +1,6 @@
-<h3>Latest Wordpress Articles</h3>
+<div *ngIf="isLoading" class="loading">Loading...</div>
 
-<button mat-button (click)="getArticles()">Refresh</button>
-
-<div *ngIf="!articles">Loading...</div>
-
-<table *ngIf="articles" mat-table [dataSource]="articles" class="mat-elevation-z8">
+<table [hidden]="isLoading" mat-table [dataSource]="articles" class="news-table mat-elevation-z8">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
@@ -26,5 +22,8 @@
     <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="newsColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: newsColumns;"></tr>
+  <tr mat-row
+      [routerLink]="['/news-details', row.id]"
+      *matRowDef="let row; columns: newsColumns;"></tr>
 </table>
+
