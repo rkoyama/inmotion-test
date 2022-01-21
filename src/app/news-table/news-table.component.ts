@@ -20,7 +20,6 @@ export class NewsTableComponent implements OnInit {
         this.isLoading = false;
         this.articles.data = result as newsArticles[];
       })
-      console.log("articles: " + this.articles);
   }
 
   constructor(

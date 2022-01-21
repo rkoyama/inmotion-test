@@ -1,6 +1,4 @@
-<button mat-button (click)="getArticles()">Refresh</button>
-
-<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="isLoading" class="loading">Loading...</div>
 
 <table [hidden]="isLoading" mat-table [dataSource]="articles" class="news-table mat-elevation-z8">
   <ng-container matColumnDef="id">
@@ -24,5 +22,8 @@
     <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="newsColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: newsColumns;"></tr>
+  <tr mat-row
+      [routerLink]="['/news-details', row.id]"
+      *matRowDef="let row; columns: newsColumns;"></tr>
 </table>
+
