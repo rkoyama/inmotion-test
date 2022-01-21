@@ -6,6 +6,8 @@ const loader = new Loader({
   version: "weekly"
 })
 
+const utePark = { lat: 36.560046, lng: -105.102654 };
+
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -23,9 +25,14 @@ export class ContactUsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     loader.load().then(() => {
       this.map = new google.maps.Map(this.mapElement.nativeElement, {
-        center: { lat: 36.560046, lng: -105.102654 },
+        center: utePark,
         zoom: 12,
         mapId: "21d6a46c52ad6946"
+      });
+      new google.maps.Marker({
+        position: utePark,
+        map: this.map,
+        title: "Welcome to Ute Park",
       });
     });
   }
